@@ -222,16 +222,17 @@ void OrientationTracker::updateOrientation() {
   eulerAcc[2] = computeAccRoll(acc);
 
   //performs quaternion complementary filtering with gyro and acc values
+  // imuFilterAlpha can be changed
   updateQuaternionComp(quaternionComp, gyr, acc, deltaT, imuFilterAlpha);
 
   //performs madgwick filtering with gyro and acc values
-  updateQuaternionMadgwick(quaternionMadg, gyr, acc, deltaT, 0.05);
+  updateQuaternionMadgwick(quaternionMadg, gyr, acc, deltaT, 0.05); // Beta can be changed via the last parameter
 
   //performs mahony filtering with gyro and acc values
-  updateQuaternionMahony(quaternionMah, eInt, gyr, acc, deltaT, 0.9,0.02);
+  updateQuaternionMahony(quaternionMah, eInt, gyr, acc, deltaT, 0.9,0.02); // Kp and KI can be changed via last two parameters respectively
 
   //performs EK filtering with gyro and acc values
-  updateQuaternionEKF(quaternionEKF, P, gyr, acc, deltaT, 0.001, 0.2);
+  updateQuaternionEKF(quaternionEKF, P, gyr, acc, deltaT, 0.001, 0.2); // Qnoise and Rnoise can be changed via last two parameters respectively
 
 
 }
