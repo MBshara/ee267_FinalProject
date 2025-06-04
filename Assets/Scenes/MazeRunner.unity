@@ -4187,9 +4187,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1288742116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4229d79609138454ea1b76789f612dbe, type: 3}
+  m_Script: {fileID: 11500000, guid: dc171975df87743dc806b1eed4e6c45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCamera: {fileID: 976958900}
+  winText3D: {fileID: 867853401}
+  usbRotationScript: {fileID: 0}
+  scriptsToDisable:
+  - {fileID: 599981982}
+  winZonePosition: {x: 19.5, y: 1, z: 28}
+  winZoneRadius: 2
+  autoDetectHallwayEnd: 0
+  hallwayLength: 10
+  mazeRows: 10
+  mazeCols: 10
+  hallwayWidth: 1
+  textDistanceFromPlayer: 0.5
+  textHeight: 1.25
+  textFollowsPlayer: 1
+  textScale: 0.05
+  winMessage: Congratulations! You escaped the Maze!
+  disableMovementOnWin: 0
+  celebrationTime: 5
 --- !u!1001 &1303172471
 PrefabInstance:
   m_ObjectHideFlags: 0
